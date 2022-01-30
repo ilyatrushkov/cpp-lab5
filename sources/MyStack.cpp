@@ -1,3 +1,1 @@
-//
-// Created by ilya on 29.01.2022.
-//
+// Copyright 2022 Trushkov Ilya ilya.tr20002@gmail.com
