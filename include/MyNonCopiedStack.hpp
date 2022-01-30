@@ -1,7 +1,7 @@
 // Copyright 2022 Trushkov ILya ilya.tr20002@gmail.com
 
-#ifndef INCLUDE_MYNONCOPIEDSTACK_HPP
-#define INCLUDE_MYNONCOPIEDSTACK_HPP
+#ifndef INCLUDE_MYNONCOPIEDSTACK_HPP_
+#define INCLUDE_MYNONCOPIEDSTACK_HPP_
 
 #include <utility>
 #include "StackItem.hpp"
@@ -15,7 +15,7 @@ class MyNonCopiedStack {
   MyNonCopiedStack(const MyNonCopiedStack &stack) = delete;
   auto operator=(const MyNonCopiedStack &stack) -> MyNonCopiedStack& = delete;
   MyNonCopiedStack(MyNonCopiedStack &&stack) noexcept = default;
-  auto operator=(MyNonCopiedStack &&stack) noexcept -> 
+  auto operator=(MyNonCopiedStack &&stack) noexcept ->
    MyNonCopiedStack& = default;
   template <typename ... Args> void push_emplace(Args&& ... value);
   void push(T&& value);
@@ -25,7 +25,7 @@ class MyNonCopiedStack {
 };
 
 template <typename T>
-template <typename ... Args> 
+template <typename ... Args>
 void MyNonCopiedStack<T>::push_emplace(Args&& ... value) {
   auto *tmp = _top_item;
   _top_item = new Item<T>{{std::forward<Args>(value) ... }, tmp};
@@ -61,4 +61,4 @@ MyNonCopiedStack<T>::~MyNonCopiedStack() {
   }
 }
 
-#endif  // INCLUDE_MYNONCOPIEDSTACK_HPP
+#endif  // INCLUDE_MYNONCOPIEDSTACK_HPP_
