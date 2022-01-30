@@ -1,7 +1,7 @@
 // Copyright 2022 Trushkov Ilya ilya.tr20002@gmail.com
 
-#ifndef INCLUDE_MYSTACK_HPP
-#define INCLUDE_MYSTACK_HPP
+#ifndef INCLUDE_MYSTACK_HPP_
+#define INCLUDE_MYSTACK_HPP_
 
 #include <exception>
 
@@ -81,4 +81,4 @@ MyStack<T>::~MyStack() {
   }
 }
 
-#endif  // INCLUDE_MYSTACK_HPP
+#endif  // INCLUDE_MYSTACK_HPP_
