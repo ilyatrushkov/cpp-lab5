@@ -1,7 +1,7 @@
 // Copyright 2022 Trushkov Ilya ilya.tr20002@gmail.com
 
-#ifndef TEMPLATE_STACKITEM_HPP
-#define TEMPLATE_STACKITEM_HPP
+#ifndef INCLUDE_STACKITEM_HPP
+#define INCLUDE_STACKITEM_HPP
 
 template <typename T>
 struct  Item {
@@ -9,4 +9,4 @@ struct  Item {
   Item<T> *previous;
 };
 
-#endif  // TEMPLATE_STACKITEM_HPP
+#endif  // INCLUDE_STACKITEM_HPP
