@@ -1,7 +1,7 @@
 // Copyright 2022 Trushkov Ilya ilya.tr20002@gmail.com
 
-#ifndef TEMPLATE_MYSTACK_HPP
-#define TEMPLATE_MYSTACK_HPP
+#ifndef INCLUDE_MYSTACK_HPP
+#define INCLUDE_MYSTACK_HPP
 
 #include <exception>
 
@@ -31,9 +31,7 @@ void MyStack<T>::push(T &&value) {
     _top_item = new Item<T>;
     _top_item -> value = value;
     _top_item -> previous = nullptr;
-  }
-  // Stack is not empty
-  else {
+  } else {  // Stack is empty
 //    Item<T> *tmp{top_item};
     auto *tmp = new Item<T>;
     tmp -> value = _top_item -> value;
@@ -50,9 +48,7 @@ void MyStack<T>::push(const T &value) {
     _top_item = new Item<T>;
     _top_item -> value = value;
     _top_item -> previous = nullptr;
-  }
-  // Stack is not empty
-  else {
+  } else {     // Stack is not empty
     //    Item<T> *tmp{top_item};
     auto *tmp = new Item<T>;
     tmp -> value = _top_item -> value;
@@ -85,4 +81,4 @@ MyStack<T>::~MyStack() {
   }
 }
 
-#endif  // TEMPLATE_MYSTACK_HPP
+#endif  // INCLUDE_MYSTACK_HPP
