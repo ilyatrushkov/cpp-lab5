@@ -12,8 +12,6 @@ int main(int argc, char **argv) {
 }
 
 class CopiedClass {
- private:
-  int _val;
  public:
   CopiedClass() = default;
   CopiedClass(CopiedClass &&a) = default;
