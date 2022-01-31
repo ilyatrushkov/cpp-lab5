@@ -26,13 +26,13 @@ class MyNonCopiedStack {
 
 template <typename T>
 template <typename ... Args>
-inline void MyNonCopiedStack<T>::push_emplace(Args&& ... value) {
+void MyNonCopiedStack<T>::push_emplace(Args&& ... value) {
   auto *tmp = _top_item;
   _top_item = new Item<T>{{std::forward<Args>(value) ... }, tmp};
 }
 
 template <typename T>
-inline void MyNonCopiedStack<T>::push(T &&value) {
+void MyNonCopiedStack<T>::push(T &&value) {
   auto *tmp = _top_item;
   _top_item = new Item<T>{std::forward<T>(value), tmp};
 }
