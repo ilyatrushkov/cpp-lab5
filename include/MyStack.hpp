@@ -14,8 +14,8 @@ class MyStack {
  public:
   MyStack() = default;
   MyStack(const MyStack &stack) = delete;
-  auto operator=(const MyStack &stack) -> MyStack& = delete;
-  MyStack(MyStack &&stack) noexcept = default;
+//   auto operator=(const MyStack &stack) -> MyStack& = delete;
+  MyStack(MyStack &&stack) = default;
   auto operator=(MyStack &&stack) noexcept -> MyStack& = default;
   void push(T&& value);
   void push(const T& value);
