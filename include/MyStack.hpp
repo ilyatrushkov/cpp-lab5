@@ -26,36 +26,14 @@ class MyStack {
 
 template <typename T>
 void MyStack<T>::push(T &&value) {
-  // Stack is empty
-  if (!_top_item) {
-    _top_item = new Item<T>;
-    _top_item -> value = value;
-    _top_item -> previous = nullptr;
-  } else {  // Stack is empty
-//    Item<T> *tmp{top_item};
-    auto *tmp = new Item<T>;
-    tmp -> value = _top_item -> value;
-    tmp -> previous = _top_item -> previous;
-    _top_item -> value = value;
-    _top_item -> previous = tmp;
-  }
+  auto *tmp = new Item<T>{std::forward(value), _top_item};
+  _top_item = tmp;
 }
 
 template <typename T>
 void MyStack<T>::push(const T &value) {
-  // Stack is empty
-  if (!_top_item) {
-    _top_item = new Item<T>;
-    _top_item -> value = value;
-    _top_item -> previous = nullptr;
-  } else {     // Stack is not empty
-    //    Item<T> *tmp{top_item};
-    auto *tmp = new Item<T>;
-    tmp -> value = _top_item -> value;
-    tmp -> previous = _top_item -> previous;
-    _top_item -> value = value;
-    _top_item -> previous = tmp;
-  }
+  auto *tmp = new Item<T>{value, _top_item};
+  _top_item = tmp;
 }
 
 template <typename T>
